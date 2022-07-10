@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+ocds-ec-client/venv
+ocds-ec-client/.venv
+ocds-ec-client/env
+ocds-ec-client/.env
+ocds-ec-client/.idea
+ocds-ec-client/.idea/*
