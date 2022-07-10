@@ -1,2 +1,2 @@
-# guanta
-Where are my taxes? (WANTA)
+# Guanta
+Where are my taxes? (WAMTA)
