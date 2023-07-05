@@ -22,19 +22,19 @@ async def query_page(page, url):
         print(">>>>>>>>>>> "+str(response.status_code))
 
 
-def consume_ocds(name):
-    url = "https://datosabiertos.compraspublicas.gob.ec/PLATAFORMA/api/search_ocds?year=2022&buyer=GUAYAQUIL"
+def consume_ocds(buyer_name):
+    url = "https://datosabiertos.compraspublicas.gob.ec/PLATAFORMA/api/search_ocds?year=2023&buyer="+buyer_name
     response = requests.get(url+"&page=1")
 
-    print(response.status_code)
+    print("status code response: "+str(response.status_code))
 
     if response.status_code == 200:
         total_pages = response.json()['pages']
+        print("total pages: "+str(total_pages))
 
         for p in range(1, total_pages + 1):
-            print(p)
+            print("page: "+str(p))
             asyncio.run(query_page(p, url))
-
 
 def jprint(obj):
     # create a formatted string of the Python JSON object
@@ -44,4 +44,4 @@ def jprint(obj):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    consume_ocds()
+    consume_ocds("GUAYAQUIL")
